@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ember — A little warmth, every order.</title>
+    <meta name="description" content="An animated café point of sale. Browse six favorites and build your order.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="brand"><svg viewBox="0 0 30 40" fill="none">
+                <path d="M17 1C19 13 5 12 7 24c1 7 6 10 11 9 9-2 9-14 4-19 0 7-6 7-5 1 1-6 3-8 0-14Z" fill="#ee7145" />
+                <path d="M15 23c-6 8 0 15 5 9 2-3-2-4-5-9" fill="#f5be82" />
+            </svg>ember<span style="color:var(--orange)">.</span></div>
+        <nav aria-label="Main navigation"><span>▦ &nbsp; Point of sale</span></nav>
+        <div class="topright"><span class="status">Register open</span>
+            <div class="staff">
+                <div class="avatar">AH</div>
+                <div style="font-size:12px;font-weight:600">Abdallah<small>Cashier · Terminal 01</small></div>
+            </div>
+        </div>
+    </header>
+    <div class="app">
+        <main>
+            <div class="intro">
+                <div>
+                    <div class="eyebrow">THE EVERYDAY CAFÉ</div>
+                    <h1>Good things, on the menu.</h1>
+                    <p>A little warmth in every order.</p>
+                </div>
+                <div class="date" id="date"></div>
+            </div>
+            <section class="banner">
+                <div>
+                    <div class="eyebrow">FRESHLY MADE. HAPPILY SERVED.</div>
+                    <h2>Make someone's day a little better.</h2>
+                    <p>Fresh bakes, good coffee, and all the little favorites.</p>
+                </div>
+            </section>
+            <div class="toolbar"><label class="search"><span>⌕</span><input id="search" type="search"
+                        placeholder="Search menu…" aria-label="Search menu"></label></div>
+            <section class="grid" id="products" aria-label="Products"></section>
+            <footer class="footnote"><span>Made fresh, served with love.</span><span>Tap a favorite to add it to your
+                    order ↗</span></footer>
+        </main>
+        <aside aria-label="Checkout cart">
+            <div class="orderhead">
+                <h2>Current order</h2><span class="count" id="count">0 items</span>
+            </div>
+            <div class="orderid"><span id="orderid">Order #001</span><button class="textbutton" id="clear">Clear
+                    all</button></div>
+           
+            <div class="cart" id="cart" aria-live="polite"></div>
+            <div class="summary">
+                <div><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+                <div><span>Tax <small>(10% rate)</small></span><span id="tax">$0.00</span></div>
+                <div class="total"><span>Total</span><strong id="total">$0.00</strong></div>
+            </div>
+            <p class="paymentlabel">Payment method</p>
+           <button class="checkout"
+                id="checkout" disabled><span>Complete order</span><span>↗</span></button>
+         
+        </aside>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <dialog id="success">
+        <div class="success">✓</div>
+        <h2>One happy order.</h2>
+        <p>Your order is complete.<br>A little goodness, ready to go.</p>
+        <div class="receipt" id="receipt"></div><button class="neworder" id="neworder">Start a new order →</button>
+    </dialog>
+    <script src="script.js"></script>
+</body>
+
+</html>
